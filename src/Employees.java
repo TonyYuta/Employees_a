@@ -31,57 +31,67 @@ import java.util.Scanner;
  * @since 1.0
  *
  */
+import java.util.Scanner;
+
 public class Employees {
 
-	/**
-	 * @param args
-	 */
-	public static int n = 0;
-
-	// arrays as employee fields
-	static String[] addresses = new String[n];
-	static String[] ages = new String[n];
-	static String[] jobTitle = new String[n];
-	static String[] names = new String[n];
-
-	/*	*//**
-			 * arrays as employee fields
-			 *//*
-			 * public void arraysAdding() { // arrays as employee fields
-			 * String[] addresses = new String[this.getN()]; System.out.println(
-			 * "Employee addresses: " + addresses.length + "\n\nEnd."); String[]
-			 * ages = new String[n]; String[] jobTitle = new String[n]; String[]
-			 * names = new String[n]; }
-			 */
-
-	/*
-	 * public void displayEmployees() { System.out.println(
-	 * "Employee addresses: " + this.addresses.length); }
-	 */
-
-	public static int getN() {
-		return n;
-	}
-
-	/**
-	 * input Qty Employees
-	 */
-	public static void inputQtyEmployees() {
-		// TODO input string
-		System.out.println("Enter qty employees:");
-		Scanner scan = new Scanner(System.in);
-		setN(Integer.parseInt(scan.nextLine()));
-	}
-
 	public static void main(String[] args) {
-		Employees emp = new Employees();
-		// emp.arraysAdding();
-		inputQtyEmployees();
-		System.out.println("Employee addresses: " + addresses.length + "\n\nEnd.");
-		System.out.println("Qty Employees: " + n + "\n\nEnd.");
+
+		Scanner input = new Scanner(System.in);
+
+		// allow user input;
+		System.out.println("How many employees do you want to enter?");
+		int num = input.nextInt();
+
+		String names[] = new String[num];
+
+		for (int i = 0; i < names.length; i++) {
+			System.out.println("Enter the name of employee " + (i + 1) + " :");
+			names[i] = input.nextLine();
+		}
+
+		String addresses[] = new String[num];
+
+		for (int i = 0; i < names.length; i++) {
+			System.out.println("Enter the address for employee " + (i + 1) + " :");
+			addresses[i] = input.nextLine();
+		}
+
+		String ages[] = new String[num];
+
+		for (int i = 0; i < names.length; i++) {
+			System.out.println("Enter the age for employee " + (i + 1) + " :");
+			ages[i] = input.nextLine();
+		}
+
+		String jobTitles[] = new String[num];
+
+		for (int i = 0; i < names.length; i++) {
+			System.out.println("Enter the jobTitles for employee " + (i + 1) + " :");
+			jobTitles[i] = input.nextLine();
+		}
+
+		// you notice that now the elements have been stored in the array
+		// names[], addresses[], ages, and jobTitles[]
+		System.out.println("These are the employees you have entered.");
+		/*
+		 * printArray(names); printArray(addresses); printArray(ages);
+		 * printArray(jobTitles);
+		 */
+
+		printArrays(names, addresses, ages, jobTitles);
 	}
 
-	public static void setN(int nS) {
-		n = nS;
+	// this method prints the elements in an arrays
+	public static void printArrays(String arrNames[], String arrAddresses[], String arrAges[], String arrJobTitles[]) {
+
+		int n = arrNames.length;
+
+		for (int i = 0; i < n; i++) {
+			System.out.print("Name: " + arrNames[i] + " Address: " + arrAddresses[i] + " Age: " + arrAges[i]
+					+ " Job Title: " + arrJobTitles[i] + "\n");
+		}
+		System.out.println("\n");
 	}
+
 }
