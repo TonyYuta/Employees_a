@@ -24,17 +24,22 @@ import java.util.Scanner;
  */
 
 /**
- * Employees
+ * Employees //ADDD (description of class)
+ * <p>
+ * //ADDD (description of core fields)
+ * <p>
+ * //ADDD (description of core methods)
  * 
  * @author Yutaka
  * @version 1.0.0
  * @since 1.0
  *
  */
-import java.util.Scanner;
-
 public class Employees {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
@@ -71,18 +76,26 @@ public class Employees {
 			jobTitles[i] = input.nextLine();
 		}
 
-		// you notice that now the elements have been stored in the array
+		// close the scanner
+		input.close();
+
+		// message that all elements have been stored in the arrays
 		// names[], addresses[], ages, and jobTitles[]
 		System.out.println("These are the employees you have entered.");
 		/*
-		 * printArray(names); printArray(addresses); printArray(ages);
-		 * printArray(jobTitles);
+		 * printArray(names), printArray(addresses), printArray(ages),
+		 * printArray(jobTitles)
 		 */
-
 		printArrays(names, addresses, ages, jobTitles);
 	}
 
 	// this method prints the elements in an arrays
+	/**
+	 * @param arrNames
+	 * @param arrAddresses
+	 * @param arrAges
+	 * @param arrJobTitles
+	 */
 	public static void printArrays(String arrNames[], String arrAddresses[], String arrAges[], String arrJobTitles[]) {
 
 		int n = arrNames.length;
